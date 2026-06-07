@@ -11,21 +11,56 @@ AI-driven interview simulation and feedback system using Qwen2.5.
 - [x] Preference Pair Selection with Qwen3.5-9B (RLAIF - Training Set)
 - [x] SFT & DPO Training with QLoRA (RLAIF)
 - [x] New Model Feedback Generation & Evaluation
-- [ ] Baseline vs New Model Comparison
+- [x] Baseline vs New Model Comparison
 
 ## Experimental Results
 
 The trained model (DPO) was evaluated against the baseline model (`Qwen/Qwen2.5-3B-Instruct`) on the fixed test set of 200 examples.
 
-| Model | Average Score (1-20) |
-| :--- | :--- |
-| **Baseline (Qwen2.5-3B-Instruct)** | 16.86 |
-| **New Model (SFT + DPO)** | **17.03** |
+| Model | Average Score (1-20) | SD |
+| :--- | :--- | :--- |
+| **Baseline (Qwen2.5-3B-Instruct)** | 16.86 | 2.37 |
+| **New Model (SFT + DPO)** | **17.03** | 1.85 |
 
-### Key Improvements
-- **Technical Precision**: The new model provides more accurate technical feedback, correctly identifying student strengths that were occasionally missed by the baseline.
-- **Educational Depth**: Feedback from the new model includes more concrete examples (e.g., explaining memoization with Fibonacci) and clearer next steps.
-- **Hallucination Reduction**: Reduced instances where the model claimed a student missed a concept that was actually present in their answer.
+### Statistical Significance
+The +0.17 average improvement is **not statistically significant**. Tested with a
+paired comparison over the 200 examples (`eval/statistical_tests.py`):
+
+| Test | Statistic | p-value | Significant (α=0.05)? |
+| :--- | :--- | :--- | :--- |
+| Paired t-test | t = 0.81 | 0.42 | No |
+| Wilcoxon signed-rank | W = 1868.5 | 0.70 | No |
+| Sign test (non-tie pairs) | 48 vs 40 | 0.46 | No |
+| Cohen's d (effect size) | 0.057 | — | Negligible |
+
+Win/loss/tie on overall score: **new model wins 48, baseline wins 40, ties 112**.
+
+### Why the Difference Is Not Significant
+- **Ceiling effect**: The judge already rates the baseline very highly — 65% of
+  baseline outputs score ≥18/20, and 191/200 examples score ≥15 for *both*
+  models. There is little headroom for the trained model to improve.
+- **Coarse judge resolution**: Scores cluster on a few discrete values (mostly
+  15 and 18), and the five rubric dimensions almost always move together. This
+  adds noise and hides fine-grained differences.
+- **Offsetting wins and losses**: Real gains are cancelled by new regressions.
+  The new model recovers several catastrophic baseline failures (e.g. three
+  cases go from 1 → 18 by fixing hallucinated "missing" concepts), but it also
+  introduces a few new technical errors (e.g. `test_0194` drops 18 → 1 after
+  falsely claiming `@Override` throws a runtime error). See
+  `eval/failure_analysis.py`.
+
+### Test-Set Caveat
+The current test set is **not as diverse as intended**: all 200 student answers
+are labeled `partially_correct` (the five answer types described below are not
+represented), and category/difficulty metadata is mostly `Unknown`. Rebuilding
+the test set with the full range of answer types would give training a fairer
+chance to show measurable gains.
+
+### Observed Qualitative Improvements (not statistically confirmed)
+- **Hallucination reduction**: Recovers baseline cases that wrongly claimed a
+  student missed a concept actually present in their answer.
+- **Educational depth**: More concrete examples (e.g. explaining memoization
+  with Fibonacci) and clearer next steps in winning cases.
 
 ## Detailed Experimental Plan
 
@@ -304,4 +339,19 @@ python train/dpo/build_dpo_dataset.py
 2. Run DPO training:
 ```bash
 python train/dpo/train_dpo_qlora.py
+```
+
+### 7. Comparison & Analysis
+After both models are scored, compare them and analyze the results:
+```bash
+# Average scores, per-dimension deltas, win/loss/tie
+python eval/compare_scores.py
+
+# Statistical significance: paired t-test, Wilcoxon, sign test, Cohen's d
+# -> writes eval/statistical_tests.json
+python eval/statistical_tests.py
+
+# Failure analysis: categorize regressions/gains, breakdowns, top examples
+# -> writes eval/failure_analysis.json, failure_regressions.csv, failure_gains.csv
+python eval/failure_analysis.py
 ```

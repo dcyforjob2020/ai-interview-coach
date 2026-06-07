@@ -1,0 +1,474 @@
+{
+  "n_matched": 200,
+  "counts": {
+    "regressions": 40,
+    "gains": 48,
+    "ties": 112
+  },
+  "regression_reason_categories": {
+    "positive": 28,
+    "vagueness": 6,
+    "technical_error": 4,
+    "missing_actionability": 2
+  },
+  "gain_reason_categories": {
+    "positive": 31,
+    "vagueness": 12,
+    "technical_error": 4,
+    "missing_actionability": 1
+  },
+  "breakdown_by_category": {
+    "DevOps": {
+      "new_wins": 0,
+      "baseline_wins": 1,
+      "ties": 1,
+      "n": 2
+    },
+    "Data Structures": {
+      "new_wins": 0,
+      "baseline_wins": 0,
+      "ties": 1,
+      "n": 1
+    },
+    "Database and SQL": {
+      "new_wins": 0,
+      "baseline_wins": 0,
+      "ties": 2,
+      "n": 2
+    },
+    "Software Testing": {
+      "new_wins": 0,
+      "baseline_wins": 0,
+      "ties": 1,
+      "n": 1
+    },
+    "Security": {
+      "new_wins": 0,
+      "baseline_wins": 0,
+      "ties": 1,
+      "n": 1
+    },
+    "General Program": {
+      "new_wins": 1,
+      "baseline_wins": 0,
+      "ties": 0,
+      "n": 1
+    },
+    "Version Control": {
+      "new_wins": 1,
+      "baseline_wins": 0,
+      "ties": 0,
+      "n": 1
+    },
+    "Front-end": {
+      "new_wins": 1,
+      "baseline_wins": 0,
+      "ties": 0,
+      "n": 1
+    },
+    "Full-stack": {
+      "new_wins": 1,
+      "baseline_wins": 0,
+      "ties": 0,
+      "n": 1
+    },
+    "Unknown": {
+      "new_wins": 44,
+      "baseline_wins": 39,
+      "ties": 106,
+      "n": 189
+    }
+  },
+  "breakdown_by_difficulty": {
+    "Medium": {
+      "new_wins": 2,
+      "baseline_wins": 1,
+      "ties": 4,
+      "n": 7
+    },
+    "Hard": {
+      "new_wins": 2,
+      "baseline_wins": 0,
+      "ties": 2,
+      "n": 4
+    },
+    "Unknown": {
+      "new_wins": 44,
+      "baseline_wins": 39,
+      "ties": 106,
+      "n": 189
+    }
+  },
+  "breakdown_by_student_answer_type": {
+    "partially_correct": {
+      "new_wins": 48,
+      "baseline_wins": 40,
+      "ties": 112,
+      "n": 200
+    }
+  },
+  "top_regressions": [
+    {
+      "id": "test_0194",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 1.0,
+      "delta": -17.0,
+      "new_reason_category": "technical_error"
+    },
+    {
+      "id": "test_0196",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 10.0,
+      "delta": -8.0,
+      "new_reason_category": "technical_error"
+    },
+    {
+      "id": "test_0103",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 12.8,
+      "delta": -5.2,
+      "new_reason_category": "technical_error"
+    },
+    {
+      "id": "test_0033",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 14.0,
+      "delta": -4.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0008",
+      "category": "DevOps",
+      "difficulty": "Medium",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0018",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0045",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0047",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0049",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "missing_actionability"
+    },
+    {
+      "id": "test_0056",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0058",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0075",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0078",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0080",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0091",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0094",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0098",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0106",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0113",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0117",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 18.0,
+      "new_score": 15.0,
+      "delta": -3.0,
+      "new_reason_category": "positive"
+    }
+  ],
+  "top_gains": [
+    {
+      "id": "test_0001",
+      "category": "General Program",
+      "difficulty": "Hard",
+      "baseline_score": 1.0,
+      "new_score": 18.0,
+      "delta": 17.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0073",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 1.0,
+      "new_score": 18.0,
+      "delta": 17.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0119",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 1.0,
+      "new_score": 18.0,
+      "delta": 17.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0028",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 19.0,
+      "delta": 4.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0015",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0016",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0021",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0030",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0036",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0038",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0039",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0081",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "vagueness"
+    },
+    {
+      "id": "test_0087",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0089",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0099",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0100",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0101",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0102",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0122",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "positive"
+    },
+    {
+      "id": "test_0124",
+      "category": "Unknown",
+      "difficulty": "Unknown",
+      "baseline_score": 15.0,
+      "new_score": 18.0,
+      "delta": 3.0,
+      "new_reason_category": "vagueness"
+    }
+  ]
+}
